@@ -200,6 +200,12 @@ namespace MvcProjectApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomer", ReplyAction="http://tempuri.org/IService1/UpdateCustomerResponse")]
         System.Threading.Tasks.Task<int> UpdateCustomerAsync(int CustomerId, string CustorName, string Address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCustomerById", ReplyAction="http://tempuri.org/IService1/GetAllCustomerByIdResponse")]
+        MvcProjectApp.ServiceReference1.Customer GetAllCustomerById(int CustomerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllCustomerById", ReplyAction="http://tempuri.org/IService1/GetAllCustomerByIdResponse")]
+        System.Threading.Tasks.Task<MvcProjectApp.ServiceReference1.Customer> GetAllCustomerByIdAsync(int CustomerId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -267,6 +273,14 @@ namespace MvcProjectApp.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> UpdateCustomerAsync(int CustomerId, string CustorName, string Address) {
             return base.Channel.UpdateCustomerAsync(CustomerId, CustorName, Address);
+        }
+        
+        public MvcProjectApp.ServiceReference1.Customer GetAllCustomerById(int CustomerId) {
+            return base.Channel.GetAllCustomerById(CustomerId);
+        }
+        
+        public System.Threading.Tasks.Task<MvcProjectApp.ServiceReference1.Customer> GetAllCustomerByIdAsync(int CustomerId) {
+            return base.Channel.GetAllCustomerByIdAsync(CustomerId);
         }
     }
 }
