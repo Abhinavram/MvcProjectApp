@@ -1,0 +1,49 @@
+﻿@model MvcProjectApp.Models.CustomerDetail
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div style="text-align:center">
+
+        <table>
+            <tr>
+                <td>
+                    ID :
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.CustomerId)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Name :
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.CustorName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address :
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Address)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Update" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+}  

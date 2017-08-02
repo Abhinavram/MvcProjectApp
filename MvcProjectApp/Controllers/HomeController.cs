@@ -47,10 +47,10 @@ namespace MvcProjectApp.Controllers
         public ActionResult Delete(int CustomerId)
         {
             int retval = ur.DeleteUserById(CustomerId);
-            if(retval > 0)
-            {
-                return RedirectToAction("Index", "Home");
-            }
+          //  if(retval > 0)
+           // {
+           //     return RedirectToAction("Index", "Home");
+           // }
             return View();
         }
 
@@ -75,7 +75,7 @@ namespace MvcProjectApp.Controllers
             int Retval = ur.UpdateCustomer(usr.CustomerId, usr.CustorName, usr.Address);
             if(Retval > 0)
             {
-                return RedirectToAction("Index", "Home");
+               return RedirectToAction("Index", "Home");
             }
             return View();
         }
